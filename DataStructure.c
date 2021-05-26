@@ -89,16 +89,19 @@ int main(int argc, char **argv) {
         File2 = fopen("dataset2.txt", "w");
 
         if(building_cnt != 0) {
-		int n;
-		int *num = (int *) malloc(sizeof(int) * building_cnt);
-    		for(int i = 0; i <= 10; i++) {
-        		do {
-            			n = rand() % 10 + 1;
-        		}while(num[n-1] != 0);
-        		fprintf(File1, "%d\n", n);
-        		num[n-1]++;
-    		}	
-        }
+    		int i, j;
+    		int *num = (int *) malloc(sizeof(int) * 1000000);
+    		for(i = 0; i < 1000000; i++) {
+        		do {    
+            			num[i] = rand();
+            			for(j = 0; j < i; j++) {
+                			if(num[i] == num[j])	break;
+            			}
+        		}while(j != i);
+        		fprintf(File1, "%d\n", num[i]);
+    		}
+	    	free(num);	
+    	}
 
         if(query_cnt != 0) {
                 for(int i = 0; i < query_cnt; i++) {
