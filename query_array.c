@@ -14,7 +14,7 @@ void query_arr(int *data, int cnt)
                 int n = atoi(line);
                 for(int i = 0; i < cnt; i++) {
                         if(n == data[i]) {
-                    //            fprintf(File2, "%d in the data.\n", n);
+                                fprintf(File2, "%d in the data.\n", n);
                                 idx++;
                                 break;
                         }
