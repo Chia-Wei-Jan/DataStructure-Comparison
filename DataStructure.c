@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 #include <sys/time.h>
 #include "building_array.h"
 #include "query_array.h"
@@ -44,7 +45,7 @@ int main(int argc, char **argv) {
         struct timeval end;
         unsigned long diff;
 
-        srand(0);
+        srand(time(NULL));
 
         for(int i = 1; i < argc; i++) {
                 if(strcmp(argv[i], "-d") == 0) {
@@ -88,11 +89,15 @@ int main(int argc, char **argv) {
         File2 = fopen("dataset2.txt", "w");
 
         if(building_cnt != 0) {
-                for(int i = 0; i < building_cnt; i++) {
-                        int n;
-                        n = rand();
-                        fprintf(File1, "%d\n", n);
-                }
+		int n;
+		int *num = (int *) malloc(sizeof(int) * building_cnt);
+    		for(int i = 0; i <= 10; i++) {
+        		do {
+            			n = rand() % 10 + 1;
+        		}while(num[n-1] != 0);
+        		fprintf(File1, "%d\n", n);
+        		num[n-1]++;
+    		}	
         }
 
         if(query_cnt != 0) {
