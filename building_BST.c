@@ -17,13 +17,11 @@ struct Tnode* insert_Tnode(struct Tnode* root, int num) {
                 p->right = NULL;
                 return p;
         }
-        if(num < root->num) {
-                root->left = insert_Tnode(root->left, num);
-        } 
-        else {    
-                root->right = insert_Tnode(root->right, num);
-        }
-        return root;
+        
+	if(num < root->num)	root->left = insert_Tnode(root->left, num);
+        else	root->right = insert_Tnode(root->right, num);
+        
+	return root;
 }
 /*
 void inorder_traversal(struct Tnode* root) {
