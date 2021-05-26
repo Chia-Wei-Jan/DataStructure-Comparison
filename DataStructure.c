@@ -90,8 +90,8 @@ int main(int argc, char **argv) {
 
         if(building_cnt != 0) {
     		int i, j;
-    		int *num = (int *) malloc(sizeof(int) * 1000000);
-    		for(i = 0; i < 1000000; i++) {
+    		int *num = (int *) malloc(sizeof(int) * building_cnt);
+    		for(i = 0; i < building_cnt; i++) {
         		do {    
             			num[i] = rand();
             			for(j = 0; j < i; j++) {
