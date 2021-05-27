@@ -35,7 +35,7 @@ void inorder_traversal(struct Tnode* root) {
         fclose(File);
 }
 */
-void building_BST(struct Tnode* root) {
+struct Tnode* building_BST(struct Tnode* root) {
         char line[MaxLineLen];
         FILE *File = fopen("dataset1.txt", "r");
 
@@ -46,4 +46,5 @@ void building_BST(struct Tnode* root) {
         }
   //      inorder_traversal(root);
         fclose(File);
+	return root;
 }

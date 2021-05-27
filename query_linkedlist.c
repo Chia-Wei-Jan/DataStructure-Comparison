@@ -9,11 +9,11 @@ struct lnode {
 };
 
 struct lnode* find(struct lnode* list, int num) {
-        struct lnode* p = list;
+       // struct lnode* p = list;
 
-        while(p) {
-                if(p->num == num)    return p;
-                p = p->next;
+        while(list) {
+                if(list->num == num)    return list;
+                list = list->next;
         }
         return NULL;
 }

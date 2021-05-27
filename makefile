@@ -1,5 +1,5 @@
 all: DataStructure.c building_array.o query_array.o building_linkedlist.o query_linkedlist.o building_BST.o query_BST.o building_binarySearch.o query_binarySearch.o building_hash.o query_hash.o
-	gcc DataStructure.c building_array.o query_array.o building_linkedlist.o query_linkedlist.o building_BST.o query_BST.o building_binarySearch.o query_binarySearch.o building_hash.o query_hash.o -o DataStructure
+	gcc DataStructure.c building_array.o query_array.o building_linkedlist.o query_linkedlist.o building_BST.o query_BST.o building_binarySearch.o query_binarySearch.o building_hash.o query_hash.o -o a.out
 
 building_array.o: building_array.c building_array.h
 	gcc -c building_array.c -o building_array.o
@@ -32,6 +32,6 @@ query_hash.o: query_hash.c query_hash.h
 	gcc -c query_hash.c -o query_hash.o
 
 clean: 
-	rm -f DataStructure building_array.o query_array.o building_linkedlist.o query_linkedlist.o building_BST.o query_BST.o building_binarySearch.o query_binarySearch.o building_hash.o query_hash.o
+	rm -f a.out building_array.o query_array.o building_linkedlist.o query_linkedlist.o building_BST.o query_BST.o building_binarySearch.o query_binarySearch.o building_hash.o query_hash.o array_building_result.txt array_query_result.txt bs_building_result.txt bs_query_result.txt bst_building_result.txt bst_query_result.txt linkedlist_building_result.txt linkedlist_query_result.txt hash_building_result.txt hash_query_result.txt
 
 

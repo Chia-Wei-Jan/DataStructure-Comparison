@@ -131,6 +131,7 @@ int main(int argc, char **argv) {
                         diff = 1000000 * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
                         printf("query time: %f sec\n", diff/1000000.0);
                 }
+		free(data);
                 printf("\n");
         }
 
@@ -139,7 +140,7 @@ int main(int argc, char **argv) {
                 printf("Linked List:\n");
                 if(building_cnt != 0) {
                         gettimeofday(&start, NULL);
-                        building_linkedlist(list);
+                        list = building_linkedlist(list);
                         gettimeofday(&end, NULL);
                         diff = 1000000 * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
                         printf("building time: %f sec\n", diff/1000000.0);
@@ -171,15 +172,16 @@ int main(int argc, char **argv) {
                         diff = 1000000 * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
                         printf("query time: %f sec\n", diff/1000000.0);
                 }
+		free(data);
                 printf("\n");       
        }
 
        if(binary_search_tree == TRUE) {
                 struct Tnode *root = NULL;
-                printf("Binary Search Tree:\n");
-                if(building_cnt != 0) {
+                printf("Binary Search Tree:\n");      
+	   	if(building_cnt != 0) {
                         gettimeofday(&start, NULL);
-                        building_BST(root);
+                        root = building_BST(root);
                         gettimeofday(&end, NULL);
                         diff = 1000000 * (end.tv_sec - start.tv_sec) + end.tv_usec - start.tv_usec;
                         printf("building time: %f sec\n", diff/1000000.0);

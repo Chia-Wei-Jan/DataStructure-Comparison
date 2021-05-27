@@ -15,7 +15,7 @@ struct lnode* insert_lnode(struct lnode* list, int num) {
        return p;
 }
 
-void building_linkedlist(struct lnode* list) {
+struct lnode* building_linkedlist(struct lnode* list) {
         char line[MaxLineLen];
         FILE *File1 = fopen("dataset1.txt", "r");
         FILE *File2 = fopen("linkedlist_building_result.txt", "w");
@@ -24,7 +24,8 @@ void building_linkedlist(struct lnode* list) {
                 int n;
                 line[strcspn(line, "\n")] = '\0';
                 n = atoi(line);
-                fprintf(File2, "%d\n", n);
                 list = insert_lnode(list, n);
+		fprintf(File2, "%d\n", n);
         }
+	return list;
 }
